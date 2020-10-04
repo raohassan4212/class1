@@ -21,7 +21,7 @@ jobs:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
       - name: Setup Node.js environment
-        uses: actions/setup-node@v2.1.2
+        uses: actions/setup-node@v2-beta
         with:
           version: 12
           
@@ -39,5 +39,5 @@ jobs:
       - name: install surge
         run: npm install -g surge
           
-      - name: Deploying Surge
+      - name: deploying Surge
         run: surge ./build http://rao-class1.surge.sh/ --token ${{secrets.HASSAN_TOKEN}}
